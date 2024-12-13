@@ -1,0 +1,6 @@
+
+
+
+# Folders to skip
+cmake-build-debug
+build
