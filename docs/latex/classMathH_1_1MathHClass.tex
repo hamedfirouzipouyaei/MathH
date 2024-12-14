@@ -1,0 +1,65 @@
+\hypertarget{classMathH_1_1MathHClass}{}\doxysection{MathH\+::Math\+HClass$<$ T $>$ Class Template Reference}
+\label{classMathH_1_1MathHClass}\index{MathH::MathHClass$<$ T $>$@{MathH::MathHClass$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Math\+H.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}}$<$ T $>$ \mbox{\hyperlink{classMathH_1_1MathHClass_a6e9b1ee44efb64c5951e1e2b2920390d}{multiply}} (\mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}}$<$ T $>$ \&A, \mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}}$<$ T $>$ \&B)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Math\+H\+::\+Math\+HClass$<$ T $>$}
+
+
+
+Definition at line 125 of file Math\+H.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMathH_1_1MathHClass_a6e9b1ee44efb64c5951e1e2b2920390d}\label{classMathH_1_1MathHClass_a6e9b1ee44efb64c5951e1e2b2920390d}} 
+\index{MathH::MathHClass$<$ T $>$@{MathH::MathHClass$<$ T $>$}!multiply@{multiply}}
+\index{multiply@{multiply}!MathH::MathHClass$<$ T $>$@{MathH::MathHClass$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}}$<$T$>$ \mbox{\hyperlink{classMathH_1_1MathHClass}{Math\+H\+::\+Math\+HClass}}$<$ T $>$\+::multiply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}}$<$ T $>$ \&}]{A,  }\item[{\mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}}$<$ T $>$ \&}]{B }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 128 of file Math\+H.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{129         \{}
+\DoxyCodeLine{130             \textcolor{keywordflow}{if} (A.cols() != B.rows())}
+\DoxyCodeLine{131             \{}
+\DoxyCodeLine{132                 \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Matrix dimensions are not compatible for multiplication"{}});}
+\DoxyCodeLine{133             \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135             Matrix<T> C(A.rows(), B.cols());}
+\DoxyCodeLine{136             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < A.rows(); ++i)}
+\DoxyCodeLine{137             \{}
+\DoxyCodeLine{138                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j = 0; j < B.cols(); ++j)}
+\DoxyCodeLine{139                 \{}
+\DoxyCodeLine{140                     \textcolor{keywordtype}{double} sum = 0.0;}
+\DoxyCodeLine{141                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} k = 0; k < A.cols(); ++k)}
+\DoxyCodeLine{142                     \{}
+\DoxyCodeLine{143                         sum += A(i, k) * B(k, j);}
+\DoxyCodeLine{144                     \}}
+\DoxyCodeLine{145                     C(i, j) = sum;}
+\DoxyCodeLine{146                 \}}
+\DoxyCodeLine{147             \}}
+\DoxyCodeLine{148             \textcolor{keywordflow}{return} C;}
+\DoxyCodeLine{149         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/hfp/\+Math\+H/include/\+Math\+H/\mbox{\hyperlink{MathH_8h}{Math\+H.\+h}}\end{DoxyCompactItemize}

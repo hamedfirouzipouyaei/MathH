@@ -1,0 +1,254 @@
+\hypertarget{classMathH_1_1Matrix}{}\doxysection{MathH\+::Matrix$<$ T $>$ Class Template Reference}
+\label{classMathH_1_1Matrix}\index{MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Math\+H.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMathH_1_1Matrix_a04a38964022aa46104191308c4637ec8}{Matrix}} (const size\+\_\+t \mbox{\hyperlink{classMathH_1_1Matrix_a2e94b639606da42c524582a9449b63b1}{rows}}, const size\+\_\+t \mbox{\hyperlink{classMathH_1_1Matrix_a32c8204c306ec1e545aeb55d54e105f1}{cols}})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}} with given dimensions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMathH_1_1Matrix_a245bf71373def3300be13395a57582db}{Matrix}} (std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ T $>$$>$ values)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}} from a nested initializer list. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classMathH_1_1Matrix_a3cbe00d013dd95598efd65261a06cb89}{operator()}} (const size\+\_\+t r, const size\+\_\+t c)
+\begin{DoxyCompactList}\small\item\em Overloaded operator () to access element at given row and column (modifiable). \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classMathH_1_1Matrix_ae81a3835e72411e39ab919eb08d549f5}{operator()}} (const size\+\_\+t r, const size\+\_\+t c) const
+\begin{DoxyCompactList}\small\item\em Overloaded operator () to access element at given row and column (read-\/only). \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classMathH_1_1Matrix_a2e94b639606da42c524582a9449b63b1}{rows}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of rows in the matrix. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classMathH_1_1Matrix_a32c8204c306ec1e545aeb55d54e105f1}{cols}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of columns in the matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Math\+H\+::\+Matrix$<$ T $>$}
+
+
+
+Definition at line 23 of file Math\+H.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMathH_1_1Matrix_a04a38964022aa46104191308c4637ec8}\label{classMathH_1_1Matrix_a04a38964022aa46104191308c4637ec8}} 
+\index{MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMathH_1_1Matrix}{Math\+H\+::\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{rows,  }\item[{const size\+\_\+t}]{cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}} with given dimensions. 
+
+This constructor creates a matrix with the specified number of rows and columns. All elements are initialized to zero (0.\+0). Note that if T is not floating-\/point, it will attempt to convert 0.\+0 to T, which should be valid for standard numeric types.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & The number of rows in the matrix. \\
+\hline
+{\em cols} & The number of columns in the matrix. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if rows or cols is zero (not thrown by this code, but such checks could be added). \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 43 of file Math\+H.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44             : rows\_(\mbox{\hyperlink{classMathH_1_1Matrix_a2e94b639606da42c524582a9449b63b1}{rows}}), cols\_(\mbox{\hyperlink{classMathH_1_1Matrix_a32c8204c306ec1e545aeb55d54e105f1}{cols}}), data\_(\mbox{\hyperlink{classMathH_1_1Matrix_a2e94b639606da42c524582a9449b63b1}{rows}} * \mbox{\hyperlink{classMathH_1_1Matrix_a32c8204c306ec1e545aeb55d54e105f1}{cols}}, 0.0) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMathH_1_1Matrix_a245bf71373def3300be13395a57582db}\label{classMathH_1_1Matrix_a245bf71373def3300be13395a57582db}} 
+\index{MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMathH_1_1Matrix}{Math\+H\+::\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ T $>$$>$}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classMathH_1_1Matrix}{Matrix}} from a nested initializer list. 
+
+This constructor allows convenient creation of matrices from a syntax like\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Matrix<double> M = \{}
+\DoxyCodeLine{    \{1.0, 2.0, 3.0\},}
+\DoxyCodeLine{    \{4.0, 5.0, 6.0\}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+In this example, M would be a 2x3 matrix. The constructor verifies that all rows have the same length. If they do not, it throws a std\+::runtime\+\_\+error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & A nested initializer list of type T representing rows and columns. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the rows do not have consistent lengths. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 63 of file Math\+H.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{64         \{}
+\DoxyCodeLine{65             rows\_ = values.size();}
+\DoxyCodeLine{66             cols\_ = values.begin()-\/>size();}
+\DoxyCodeLine{67             data\_.resize(rows\_ * cols\_);}
+\DoxyCodeLine{68             \textcolor{keywordtype}{size\_t} i = 0;}
+\DoxyCodeLine{69             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \&row : values)}
+\DoxyCodeLine{70             \{}
+\DoxyCodeLine{71                 \textcolor{keywordflow}{if} (row.size() != cols\_)}
+\DoxyCodeLine{72                     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Inconsistent row length"{}});}
+\DoxyCodeLine{73                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \&val : row)}
+\DoxyCodeLine{74                     data\_[i++] = val;}
+\DoxyCodeLine{75             \}}
+\DoxyCodeLine{76         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMathH_1_1Matrix_a32c8204c306ec1e545aeb55d54e105f1}\label{classMathH_1_1Matrix_a32c8204c306ec1e545aeb55d54e105f1}} 
+\index{MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}!cols@{cols}}
+\index{cols@{cols}!MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cols()}{cols()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classMathH_1_1Matrix}{Math\+H\+::\+Matrix}}$<$ T $>$\+::cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of columns in the matrix. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t The number of columns. 
+\end{DoxyReturn}
+
+
+Definition at line 120 of file Math\+H.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{120 \{\textcolor{keywordflow}{return} cols\_;\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMathH_1_1Matrix_a3cbe00d013dd95598efd65261a06cb89}\label{classMathH_1_1Matrix_a3cbe00d013dd95598efd65261a06cb89}} 
+\index{MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\& \mbox{\hyperlink{classMathH_1_1Matrix}{Math\+H\+::\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{r,  }\item[{const size\+\_\+t}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloaded operator () to access element at given row and column (modifiable). 
+
+Provides direct read-\/write access to the element at position (r, c). Uses zero-\/based indexing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The row index (0-\/based). \\
+\hline
+{\em c} & The column index (0-\/based). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\& A reference to the element at (r, c). 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if r or c are out of bounds (not implemented here, but could be added). \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 88 of file Math\+H.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{89         \{}
+\DoxyCodeLine{90             \textcolor{keywordflow}{return} data\_[r * cols\_ + c];}
+\DoxyCodeLine{91         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMathH_1_1Matrix_ae81a3835e72411e39ab919eb08d549f5}\label{classMathH_1_1Matrix_ae81a3835e72411e39ab919eb08d549f5}} 
+\index{MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classMathH_1_1Matrix}{Math\+H\+::\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{r,  }\item[{const size\+\_\+t}]{c }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloaded operator () to access element at given row and column (read-\/only). 
+
+Provides read-\/only access to the element at position (r, c). Uses zero-\/based indexing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The row index (0-\/based). \\
+\hline
+{\em c} & The column index (0-\/based). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T The value of the element at (r, c). 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if r or c are out of bounds (not implemented here, but could be added). \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 103 of file Math\+H.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104         \{}
+\DoxyCodeLine{105             \textcolor{keywordflow}{return} data\_[r * cols\_ + c];}
+\DoxyCodeLine{106         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMathH_1_1Matrix_a2e94b639606da42c524582a9449b63b1}\label{classMathH_1_1Matrix_a2e94b639606da42c524582a9449b63b1}} 
+\index{MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}!rows@{rows}}
+\index{rows@{rows}!MathH::Matrix$<$ T $>$@{MathH::Matrix$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classMathH_1_1Matrix}{Math\+H\+::\+Matrix}}$<$ T $>$\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of rows in the matrix. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t The number of rows. 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file Math\+H.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{113 \{\textcolor{keywordflow}{return} rows\_;\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/hfp/\+Math\+H/include/\+Math\+H/\mbox{\hyperlink{MathH_8h}{Math\+H.\+h}}\end{DoxyCompactItemize}
